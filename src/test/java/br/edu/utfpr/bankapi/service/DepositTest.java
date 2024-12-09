@@ -1,3 +1,4 @@
+//TESTE 03
 package br.edu.utfpr.bankapi.service;
 
 import org.junit.jupiter.api.Assertions;
@@ -54,9 +55,6 @@ class DepositTest {
 	 */
 	@Test
 	void deveriaDepositar() throws NotFoundException {
-		// Garantir que as validações sejam executadas
-		// Garantir que a transação foi salva
-
 		// ### ARRANGE ###
 		double saldoInicial = 150.85;
 
@@ -67,15 +65,10 @@ class DepositTest {
 		BDDMockito.given(availableAccountValidation.validate(depositDTO.receiverAccountNumber()))
 				.willReturn(receiverAccount);
 
-		// Comportamento do receiverAccount
-		// BDDMockito.given(receiverAccount.getBalance()).willReturn(1000D);
-		// BDDMockito.given(receiverAccount.getSpecialLimit()).willReturn(0D);
-
 		// ### ACT ###
 		service.deposit(depositDTO);
 
 		// ### ASSERT ###
-		// BDDMockito.then(transactionRepository).should().save(BDDMockito.any());
 		BDDMockito.then(transactionRepository).should().save(transactionCaptor.capture());
 		Transaction transactionSalva = transactionCaptor.getValue();
 

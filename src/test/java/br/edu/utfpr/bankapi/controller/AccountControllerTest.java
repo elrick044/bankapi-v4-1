@@ -1,3 +1,4 @@
+//TESTE 02
 package br.edu.utfpr.bankapi.controller;
 
 import org.hamcrest.Matchers;
@@ -103,6 +104,8 @@ class AccountControllerTest {
         //Assertions.assertEquals("application/json", res.getContentType());
     }
     
+
+    ///TESTE 02
     @Test
     void deveriaRetornar201ParaUsuarioCadastrado() throws Exception{
         // ARRANGE
